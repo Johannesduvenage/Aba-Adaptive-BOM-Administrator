@@ -1,0 +1,20 @@
+{
+  "name": "Sample",
+  "currency": "USD",
+  "units": ["lb", "mm"],
+
+  "minManufacturingVolume": 150,
+
+  "distributorLocations": [
+    {
+      "locId": "3PL Provider",
+      "stockFrac": 1
+    }
+  ],
+
+  "assemblies": [
+    "asm1",
+    "asm2",
+    "packaging"
+  ]
+}
