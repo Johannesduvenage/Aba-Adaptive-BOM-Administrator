@@ -34,7 +34,6 @@ the matching Type entry.
 */
 function validateType(tstr){
   let retVal = Type.NOT_A_TYPE;
-  console.log(tstr);
   if(tstr != Type.NOT_A_TYPE){
     for(const t in Type){
       // If a valid type (not NOT_A_TYPE) and symbol string matches given string:

@@ -50,6 +50,6 @@ module.exports = class Part{
   /* Saves the Given Part to its associated JSON *.part file */
   save(){
     let json = JSON.stringify(this.data, null, 2); // Save as 'pretty-print'
-    fs.writeFile(this.addr, json, 'utf8');
+    fs.writeFileSync(this.addr, json, 'utf8');
   } // #save
 } // Class: Part
