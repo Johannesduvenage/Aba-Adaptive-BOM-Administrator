@@ -16,7 +16,7 @@ exports_EN.Key_Files = {
 }
 
 exports_EN.GUI_Strings = {
-  NAME: "Ottia Ace", // Supply Chain?
+  NAME: "Ottia Ace", // Supply Chain? 
   DESC: "Adaptive Cost Estimator",
 
   PRODUCT_SUMMARY: "Product Summary",
