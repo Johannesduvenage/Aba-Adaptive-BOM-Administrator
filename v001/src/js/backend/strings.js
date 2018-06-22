@@ -16,8 +16,8 @@ exports_EN.Key_Files = {
 }
 
 exports_EN.GUI_Strings = {
-  NAME: "Ottia Aba", // Supply Chain?
-  DESC: "Adaptive BOM Administrator",
+  NAME: "Ottia Ace", // Supply Chain?
+  DESC: "Adaptive Cost Estimator",
 
   PRODUCT_SUMMARY: "Product Summary",
   DATA_ANALYSIS: "Data Analysis",

@@ -1,7 +1,7 @@
 {
-  "name": "Aba",
+  "name": "Ace",
   "version": "0.0.1",
-  "description": "Aba: The Adaptive BOM Administrator",
+  "description": "Ace: The Adaptive Cost Estimator",
   "author": "Ottia",
   "main": "app.js",
   "scripts": {
