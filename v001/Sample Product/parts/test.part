@@ -1,7 +1,7 @@
 {
   "name": "Test Part",
   "costTable": {
-    "bins": [
+    "volumes": [
       1,
       10,
       100,
@@ -20,7 +20,7 @@
   "sourcingProvider": "DHL",
   "sourcingDestination": "Assembler",
   "sourcingCostTable": {
-    "bins": [
+    "volumes": [
       1,
       10,
       100,

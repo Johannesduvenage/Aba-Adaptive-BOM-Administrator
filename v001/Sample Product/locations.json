@@ -5,7 +5,7 @@
     "desc": "Electronics Fabricator and Assembler",
     "country": "CN",
     "postCode": "310004",
-    "coord": [30.304140, 120.183491],
+    "coord": [30.304140, 120.183491]
   },
   {
     "id": "Injection Molder",
@@ -13,7 +13,7 @@
     "desc": "Provider of Injection Molded Parts and Tooling",
     "country": "USA",
     "postCode": "48036",
-    "coord": [42.586888, -82.919551],
+    "coord": [42.586888, -82.919551]
   },
   {
     "id": "Assembler",
@@ -21,7 +21,7 @@
     "desc": "Assembler of Final Product",
     "country": "USA",
     "postCode": "15086",
-    "coord": [40.678055, -80.112149],
+    "coord": [40.678055, -80.112149]
   },
   {
     "id": "3PL Provider",
@@ -29,6 +29,6 @@
     "desc": "Third-Party Logistics Provider and Distributor",
     "country": "USA",
     "postCode": "40165",
-    "coord": [37.963813, -85.705112],
+    "coord": [37.963813, -85.705112]
   }
 ]

@@ -1,9 +1,18 @@
-const path = require('path');
-const Part = require('./js/part.js');
+const maestro = require('./js/backend/maestro.js');
 
-const sample_path = path.join(__dirname, '..', 'Sample Product');
+const path = require('path');
+
+const product_root_path = path.join(__dirname, '..', 'Sample Product');
+
+
 
 $(() => {
-  let p = Part.load(path.join(sample_path, 'parts', 'test.part'));
-  p.save();
+  console.time("maestro_load");
+  maestro.begin(product_root_path, maestroLoaded);
 });
+
+function maestroLoaded(){
+  console.log('Maestro Loaded All Data in:')
+  console.timeEnd("maestro_load");
+  console.log('Maestro: ', maestro);
+}
