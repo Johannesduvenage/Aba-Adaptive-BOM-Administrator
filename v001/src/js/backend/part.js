@@ -46,11 +46,11 @@ module.exports = class Part extends FileContainer{
   unitCost(vol){
     vol = vol || this.totalPartCount; // <- default value
     return this.data.costTable.cost(vol) + this.data.sourcingCostTable.cost(vol) / vol;
-  }
+  } // #unitCost
 
   get weight(){
     return this.data.weight;
-  }
+  } // #weight
 
   /* Loads the Part from a JSON file at the given path */
   static load(addr){

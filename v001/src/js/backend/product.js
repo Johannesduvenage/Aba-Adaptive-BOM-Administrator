@@ -40,6 +40,39 @@ module.exports = class Product extends FileContainer{
     this.rootDir = path.dirname(addr);
   } // #constructor
 
+  /* Cost of Goods Sold for One Unit of the Product at a Given Order Volume */
+  COGS(vol){
+    vol = vol || this.totalCount; // <- default value
+    return this.laborSubTotal() + this.subassembliesSubTotal(vol);
+  } // #unitCost
+
+  /* Weight of the Product */
+  get weight(){
+    let w = 0;
+    this.data.subAssemblies.forEach( (s) => { w += s.count * this.maestro.assemblies[s.id].weight; } );
+    return w;
+  } // #weight
+
+  /* Subtotal of All Labor used in the Final Combining (likely packaging) of
+  Sub-Assemblies*/
+  laborSubTotal(){
+    let c = 0;
+    this.data.labor.forEach( (l) => {
+      c += (l.time_mins / 60.0)
+         * this.maestro.labor_rates[l.id].rate_per_hour
+         * this.maestro.labor_rates[l.id].overheadFactor;
+    });
+    return c;
+  } // #laborSubTotal
+
+  /* Weight of All Sub-Assemblies used in this Assembly */
+  subassembliesSubTotal(vol){
+    vol = vol || this.totalCount; // <- default value
+    let c = 0;
+    this.data.subAssemblies.forEach( (s) => { c += s.count * this.maestro.assemblies[s.id].unitCost(vol); } );
+    return c;
+  }
+
   /* Loads the Part from a JSON file at the given path */
   static load(maestro, addr){
     // Load Part Data from Accompanying JSON File:

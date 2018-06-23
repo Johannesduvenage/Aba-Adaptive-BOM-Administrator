@@ -16,7 +16,7 @@ exports_EN.Key_Files = {
 }
 
 exports_EN.GUI_Strings = {
-  NAME: "Ottia Ace", // Supply Chain? 
+  NAME: "Ottia Ace", // Supply Chain?
   DESC: "Adaptive Cost Estimator",
 
   PRODUCT_SUMMARY: "Product Summary",
@@ -30,6 +30,10 @@ exports_EN.GUI_Strings = {
 exports_EN.Sys_Strings = {
   NO_NAME: "No Name",
   INVALID_MATH: "[EXP ERR]"
+}
+
+exports_EN.Assembly_Strings = {
+  NO_LOCATION: "No Location Given"
 }
 
 exports_EN.Part_Strings = {

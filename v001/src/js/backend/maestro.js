@@ -49,7 +49,7 @@ function loadAll(dir, ext, loadFcn){
   const files = util.fs.findAllDeep(ext, path.join(exports.rootDir, dir));
   const obj = {};
   for(const f in files){
-    let name = path.basename(files[f], ext);
+    let name = util.strings.toCamelCase(path.basename(files[f], ext));
     obj[name] = loadFcn(files[f]);
   }
   return obj;
