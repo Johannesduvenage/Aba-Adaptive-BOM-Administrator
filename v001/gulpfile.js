@@ -8,6 +8,8 @@ const jshint = require('gulp-jshint');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
+const babel = require('gulp-babel');
+const htmlreplace = require('gulp-html-replace');
 
 
 // Lint Task

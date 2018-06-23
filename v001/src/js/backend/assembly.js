@@ -17,7 +17,7 @@ module.exports = class Assembly extends FileContainer{
    given path, addr. */
   constructor(maestro, addr, data){
     let _data = { // Default Values
-      location: NO_LOCATION, // TODO: Inter-assembly shipping costs
+      location: strings.NO_LOCATION, // TODO: Inter-assembly shipping costs
 
       /* Labor Entries in form: {id: "", time_mins: ""} */
       labor: [],
@@ -78,7 +78,7 @@ module.exports = class Assembly extends FileContainer{
     let c = 0;
     this.data.subAssemblies.forEach( (s) => { c += s.count * this.maestro.assemblies[s.id].unitCost(vol); } );
     return c;
-  }
+  } // #subassembliesSubTotal
 
   /* Weight of All Sub-Assemblies used in this Assembly (excluding sub-assemblies)*/
   subassembliesWeight(){

@@ -25,6 +25,9 @@ module.exports = class Product extends FileContainer{
       /* Labor Entries in form: {locId: "", stockFrac: ""} */
       distributorLocations: [],
 
+      /* Labor Entries in form: {id: "", time_mins: ""} */
+      labor: [],
+
       // List of Ids for Assemblies Contained in this Product
       /* Assembly Entries in form: {id: "", count: ""} */
       assemblies: [],
@@ -43,13 +46,13 @@ module.exports = class Product extends FileContainer{
   /* Cost of Goods Sold for One Unit of the Product at a Given Order Volume */
   COGS(vol){
     vol = vol || this.totalCount; // <- default value
-    return this.laborSubTotal() + this.subassembliesSubTotal(vol);
+    return this.laborSubTotal() + this.assembliesSubTotal(vol);
   } // #unitCost
 
   /* Weight of the Product */
   get weight(){
     let w = 0;
-    this.data.subAssemblies.forEach( (s) => { w += s.count * this.maestro.assemblies[s.id].weight; } );
+    this.data.assemblies.forEach( (s) => { w += s.count * this.maestro.assemblies[s.id].weight; } );
     return w;
   } // #weight
 
@@ -66,12 +69,12 @@ module.exports = class Product extends FileContainer{
   } // #laborSubTotal
 
   /* Weight of All Sub-Assemblies used in this Assembly */
-  subassembliesSubTotal(vol){
+  assembliesSubTotal(vol){
     vol = vol || this.totalCount; // <- default value
     let c = 0;
-    this.data.subAssemblies.forEach( (s) => { c += s.count * this.maestro.assemblies[s.id].unitCost(vol); } );
+    this.data.assemblies.forEach( (s) => { c += s.count * this.maestro.assemblies[s.id].unitCost(vol); } );
     return c;
-  }
+  } // #assembliesSubTotal
 
   /* Loads the Part from a JSON file at the given path */
   static load(maestro, addr){
