@@ -1,18 +1,9 @@
-const maestro = require('./js/backend/maestro.js');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './css/index.css';
 
-const path = require('path');
-
-const product_root_path = path.join(__dirname, '..', 'Sample Product');
-
-$(() => {
-  console.time("maestro_load");
-  maestro.begin(product_root_path, maestroLoaded);
-});
-
-function maestroLoaded(){
-  console.log('Maestro Loaded All Data in:')
-  console.timeEnd("maestro_load");
-  console.log('Maestro: ', maestro);
-  maestro.products['sample'].COGS(100);
-  maestro.products['sample'].weight;
-}
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);

@@ -1,6 +1,10 @@
 'use strict';
-/* Collection of strings used across the program, stored in one location for
-easy updating, comparison, and localization */
+/****
+ * Collection of strings used across the program, stored in one location for
+ * easy updating, comparison, and localization.
+ *
+ * Authors: Connor W. Colombo (Ottia)
+****/
 
 const exports_EN = {};
 
