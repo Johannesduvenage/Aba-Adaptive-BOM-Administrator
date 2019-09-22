@@ -53,6 +53,9 @@ module.exports = class CostTable{
   constructor(data){
     this.type = validateType(data.type);
     this.type = this.type ? this.type : Type.BINNED; // Default value
+
+    // Ensure volumes and costs are the same length (the minimum of their input
+    // lengths):
     let len = Math.min(data.volumes.length, data.costs.length);
     this.volumes = data.volumes.slice(0, len);
     this.costs = data.costs.slice(0, len);

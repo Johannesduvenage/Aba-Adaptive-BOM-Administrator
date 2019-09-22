@@ -40,7 +40,7 @@ module.exports = class FileContainer{
   } // #constructor
 
   // Removes Evaluated Expressions from Part Data (to prevent name conflict with
-  // the expressions themself).
+  // the expressions themselves).
   removeEvalExpressions(){
     for(const e in this.evaluated){
       delete this.data[e];
